@@ -16,6 +16,6 @@ spec:
       - name: hello-app
         image: hashicorp/http-echo
         args:
-        - "-text=Hello from Argo CD on Minikube"
+        - "-text=Hello from hello-app!"
         ports:
         - containerPort: 5678
