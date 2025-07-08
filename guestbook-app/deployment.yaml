@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: guestbook-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: guestbook-app
@@ -14,8 +14,9 @@ spec:
     spec:
       containers:
         - name: http-echo
-          image: hashicorp/http-echo
+          image: hashicorp/http-echo:0.2.3
           args:
             - "-text=Hello from guestbook-app!"
+            - "-listen=:5678"
           ports:
             - containerPort: 5678
